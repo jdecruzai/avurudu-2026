@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avurudu Family Get-Together 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A623;
+    --deep-gold: #D4901E;
+    --rich-red: #C0392B;
+    --warm-orange: #E67E22;
+    --deep-maroon: #6B1D1D;
+    --cream: #FFF8E7;
+    --dark-bg: #1a0a0a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+  }
+
+  .flyer {
+    width: 540px;
+    background: linear-gradient(170deg, #2D0A0A 0%, #1a0505 30%, #0d0d2b 70%, #1a0a1a 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(245,166,35,0.15);
+  }
+
+  .flyer::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 20px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--gold) 0%, transparent 30%, transparent 70%, var(--gold) 100%) 1;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(245,166,35,0.03) 45%, rgba(245,166,35,0.06) 50%, rgba(245,166,35,0.03) 55%, transparent 70%);
+    background-size: 300% 300%;
+    animation: shimmer 6s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 200% 200%; }
+    50% { background-position: -100% -100%; }
+  }
+
+  .lantern {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .lantern-1 { width: 200px; height: 200px; background: var(--rich-red); top: -60px; right: -40px; animation: float 8s ease-in-out infinite; }
+  .lantern-2 { width: 150px; height: 150px; background: var(--gold); bottom: 200px; left: -50px; animation: float 10s ease-in-out infinite reverse; }
+  .lantern-3 { width: 120px; height: 120px; background: var(--warm-orange); top: 35%; right: -30px; animation: float 7s ease-in-out infinite; opacity: 0.25; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  .star:nth-child(1) { top: 5%; left: 15%; animation-delay: 0s; }
+  .star:nth-child(2) { top: 12%; right: 12%; animation-delay: 1.2s; }
+  .star:nth-child(3) { top: 30%; left: 8%; animation-delay: 0.6s; }
+  .star:nth-child(4) { top: 50%; right: 18%; animation-delay: 2s; }
+  .star:nth-child(5) { top: 70%; left: 22%; animation-delay: 1.5s; }
+  .star:nth-child(6) { top: 25%; left: 88%; animation-delay: 0.3s; }
+  .star:nth-child(7) { top: 85%; left: 5%; animation-delay: 2.5s; }
+  .star:nth-child(8) { top: 10%; left: 80%; animation-delay: 3s; }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    padding: 36px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Sun motif */
+  .sun-motif {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 14px;
+    animation: spin-slow 30s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .subtitle-top {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    opacity: 0.9;
+  }
+
+  .sinhala-title {
+    font-size: 26px;
+    color: var(--cream);
+    margin-bottom: 2px;
+    line-height: 1.3;
+    text-shadow: 0 2px 20px rgba(245,166,35,0.3);
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 2px;
+    text-shadow: 0 4px 30px rgba(245,166,35,0.25);
+  }
+
+  .main-title .accent {
+    background: linear-gradient(135deg, var(--gold), var(--warm-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .year-badge {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 48px;
+    background: linear-gradient(135deg, var(--gold), #FFD700, var(--warm-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 6px 0;
+    filter: drop-shadow(0 2px 10px rgba(245,166,35,0.3));
+  }
+
+  .tagline {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: var(--gold);
+    margin: 4px 0 20px;
+    opacity: 0.95;
+  }
+
+  .divider {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 8px 0 20px;
+    opacity: 0.5;
+  }
+
+  /* ===== PHOTO SLIDESHOW SECTION ===== */
+  .memories-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 14px;
+    opacity: 0.8;
+  }
+
+  .slideshow {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(245,166,35,0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+
+  .slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  .slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: -30px;
+    margin-bottom: 34px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .slide-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,248,231,0.3);
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .slide-dots .dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+
+  .memories-tag {
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px;
+    color: rgba(255,248,231,0.6);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  /* Info blocks */
+  .info-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    padding: 12px 16px;
+    background: rgba(245,166,35,0.06);
+    border-radius: 14px;
+    border: 1px solid rgba(245,166,35,0.12);
+    backdrop-filter: blur(10px);
+  }
+
+  .info-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    width: 34px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .info-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .info-value {
+    font-size: 15px;
+    color: var(--cream);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .info-value .sub {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,248,231,0.6);
+  }
+
+  /* Activities */
+  .activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .activity-tag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    background: linear-gradient(135deg, rgba(245,166,35,0.12), rgba(192,57,43,0.12));
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .activity-tag .emoji {
+    font-size: 15px;
+  }
+
+  /* CTA */
+  .cta-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .cta-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .koha-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 6px 0 4px;
+  }
+
+  .koha-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+
+  .koha-line.right {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .koha-emoji { font-size: 26px; }
+
+  .families-text {
+    font-size: 13px;
+    color: rgba(255,248,231,0.5);
+    letter-spacing: 1px;
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  .bottom-bar {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rich-red), var(--gold), var(--warm-orange), var(--gold), var(--rich-red));
+    margin-top: 24px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+  <div class="lantern lantern-1"></div>
+  <div class="lantern lantern-2"></div>
+  <div class="lantern lantern-3"></div>
+  <div class="shimmer"></div>
+
+  <div class="stars">
+    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  </div>
+
+  <div class="content">
+    <!-- Sun motif -->
+    <svg class="sun-motif" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#F5A623"/>
+          <stop offset="100%" style="stop-color:#E67E22"/>
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="20" fill="url(#sunGrad)" opacity="0.9"/>
+      <circle cx="50" cy="50" r="28" fill="none" stroke="url(#sunGrad)" stroke-width="1.5" opacity="0.5"/>
+      <g stroke="url(#sunGrad)" stroke-width="2" stroke-linecap="round" opacity="0.7">
+        <line x1="50" y1="5" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="95"/>
+        <line x1="5" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="95" y2="50"/>
+        <line x1="18" y1="18" x2="26" y2="26"/><line x1="74" y1="74" x2="82" y2="82"/>
+        <line x1="82" y1="18" x2="74" y2="26"/><line x1="26" y1="74" x2="18" y2="82"/>
+        <line x1="50" y1="0" x2="50" y2="8" opacity="0.4"/>
+        <line x1="27" y1="7" x2="33" y2="17" opacity="0.4"/>
+        <line x1="73" y1="7" x2="67" y2="17" opacity="0.4"/>
+        <line x1="7" y1="27" x2="17" y2="33" opacity="0.4"/>
+        <line x1="93" y1="27" x2="83" y2="33" opacity="0.4"/>
+        <line x1="7" y1="73" x2="17" y2="67" opacity="0.4"/>
+        <line x1="93" y1="73" x2="83" y2="67" opacity="0.4"/>
+        <line x1="27" y1="93" x2="33" y2="83" opacity="0.4"/>
+        <line x1="73" y1="93" x2="67" y2="83" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <div class="subtitle-top">You're Invited To Our</div>
+    <div class="sinhala-title">සිංහල & දෙමළ අලුත් අවුරුදු</div>
+    <div class="main-title">
+      <span class="accent">Avurudu</span><br>
+      Family Get-Together
+    </div>
+    <div class="year-badge">2026</div>
+    <div class="tagline">A tradition we love & cherish!</div>
+
+    <div class="divider"></div>
+
+    <!-- PHOTO SLIDESHOW FROM LAST YEAR -->
+    <div class="memories-label">✨ Memories from Avurudu 2025 ✨</div>
+
+    <div class="slideshow" id="slideshow">
+      <img class="active" src="https://lh3.googleusercontent.com/pw/AP1GczN-qzWOmEG7BUXQADrQQDpMEYz-MQbbZ2yf_J1GGiRLd_O4pavVQ4sjSl4OG3CZYa9oD0xk0oIlOEgSvpErjvL2xRLunL2QBcnlGNwzRCi8zR9-VKMv=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczN3_Stp9UfNcGJi5p3ZCoq9kLO3EbwnXA52srjCMAM1qKTd2oo1EDKrWSE732rpsYH0kx4qekj4Opket6IadAgjyePgKvLp3VeZjjZUAXEyCeVfNCoV=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczMxAVDikT1SduSZuSEExZZQUkDHZ4TT4qyffvJn-53ydfZ-K17OYPpLZYHbECs9Klyrwx5Q7ooZ8j8gIdMUrS7oWs4Cvy5wXwSTQSYQzZcjTbCPsFf3=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNeYWLib-df4hScLnrJaxxDOgUJ9XxQ6dl1j7fUruoJyFjoGkZSjRV_Gtldd4nEhwxemgR5OH0H-qSYgleq5JDVM92CTSJLAtN5VFjV77kbMRyB_Rn6=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPpzhdaxxrq4KJBztFf4lyGzoCeG7cqTq2CR8inIQ5zGmCIfqja_iyaxifpSMQzjlEh7GbeZ3rC25hPvkapdrzXMjB2ph1M6X8hhY3XMIOZCper_KFW=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPnCyvCLzb-rZu-LIEISVQmw8Gc-hez6SwkMOY8cfzvAB6bwoBQf2bFKCTyBQpHFvqQW_VfCh22E4H-Iy9CU6NuKxw3FZxarCHCs_8JvYJwTa-okGmJ=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOaBv3k09pkTlUIAJCURPrycDlKpmXoqQMhXzwrlD6tGanlJedZKILwbaxl1m60MhjfSm10rNLo9h1a_06E-MgZ7AArrIQLrdAUlgDaK8ybKuDzyF4N=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNvsIfkr48TyiEtCfazBHq05gh3BOFIH7qYfldGXeREtwXAtIzdR5yW3l7RamAtZ1k0RqOjb03H4u3g49kDKAUL3vI31ESqeB1M359yHUjUZvzpyEUB=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczP9E9-PXre-TQ6PuE-atxonFIg488oDkv9LcpPBP16ZU7rV6SNgA4-qT6UaveIzOAMFQhgmuz0Guvo6uFL4SQ_uvSPfkxBjAhRFFwGPpKMHuQt5OGx0=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPuY2M76NNrSiC53mZL9JA0gIqZhhmkxsv1Dj-OTROkiox3GtyvS2-KEEVd4KoTPOVbebIDUHEa_CV_a7IpuRWIZXI6SKojQQY0h4WuqWHlnIk7iTgR=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczMPOXrGaGWK12VCwYEhkdlHgoLnbd21CYVicG6bTSC3MZ0_GDf_ETUWVxVo7ivUADpgeyfXYfzTxw2lim_B7c5axfiHFJalLBERyT8BpfaEbZlQjdh9=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPu0jlwmOG7N2Ew30iIVhX948_rMNn-XdM_z0ewzkP-_TSuhktfbz_xaoKU1Ycao2Yz7lgOoYIIuPSn08chShCf9LFPi_Fp3cVXJ2kW0niz-eE_FUCu=w800" alt="Avurudu 2025">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOwL9wX3Rdca8Thiwg4KKnV1lrq3QDdcrolf5BFAJRkkeGxSu7sVhjuPPq_gpDuYCJNglEvFbJ3qaolPPP-FN9rxz1h3LKB4RbrVFUyaSLECyZ90i6o=w800" alt="Avurudu 2025">
+    </div>
+
+    <div class="slide-dots" id="slideDots"></div>
+
+    <div class="memories-tag">Let's make 2026 even better! 🎊</div>
+
+    <div class="divider"></div>
+
+    <!-- Event Details -->
+    <div class="info-grid">
+      <div class="info-row">
+        <div class="info-icon">📅</div>
+        <div class="info-text">
+          <div class="info-label">Date</div>
+          <div class="info-value">Thursday, 17th April 2026</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon">⏰</div>
+        <div class="info-text">
+          <div class="info-label">Time</div>
+          <div class="info-value">6:30 PM onwards</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <div class="info-label">Venue</div>
+          <div class="info-value">Priyamal & Chandima's Residence<br><span class="sub">Details shared separately</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activities -->
+    <div class="activities">
+      <div class="activity-tag"><span class="emoji">🎯</span> Avurudu Games</div>
+      <div class="activity-tag"><span class="emoji">🎤</span> Karaoke</div>
+      <div class="activity-tag"><span class="emoji">🍖</span> BBQ & Drinks</div>
+      <div class="activity-tag"><span class="emoji">🎉</span> Fun for All</div>
+      <div class="activity-tag"><span class="emoji">🍛</span> Great Food</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="cta-area">
+      <div class="cta-text">Bring the whole family!</div>
+
+      <div class="koha-section">
+        <div class="koha-line"></div>
+        <div class="koha-emoji">🪔</div>
+        <div class="koha-line right"></div>
+      </div>
+
+      <div class="families-text">
+        සුභ අලුත් අවුරුද්දක් වේවා!<br>
+        Wishing Everyone a Happy New Year!
+      </div>
+    </div>
+
+    <div class="bottom-bar"></div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('#slideshow img');
+  const dotsContainer = document.getElementById('slideDots');
+  let current = 0;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.dot');
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  setInterval(() => {
+    goTo((current + 1) % slides.length);
+  }, 2000);
+</script>
+
+</body>
+</html>
